@@ -1,0 +1,4 @@
+RewriteCond %{HTTP_HOST} ^bisnis.mang.web.id$ [NC,OR]
+  RewriteCond %{HTTP_HOST} ^www.bisnis.mang.web.id$
+  RewriteCond %{REQUEST_URI} !public/
+  RewriteRule (.*) /public/$1 [L]
