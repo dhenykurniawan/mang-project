@@ -117,7 +117,7 @@
             <div class="col">
                 <p>Total</p>
             </div>
-            <div class="col-auto txt-total">Rp. 0</div>
+            <div class="col-auto txt-total"></div>
         </div>
 
         <!-- Button -->
@@ -197,6 +197,7 @@
                             $(".txt-ongkir").html(data.kelurahan_ongkir);
                         }
                         $(".txt-total").html(data.total_rupiah);
+                    console.log();
                     },
                     error:function(data){
                         console.log(data);

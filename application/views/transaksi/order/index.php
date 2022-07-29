@@ -52,7 +52,7 @@
                                             <th width="10" title="Tanggal" class="no-filter select-method">Metode Pembayaran</th>
                                             
                                              <th width="20" title="Total">Total</th>
-                                            <th width="10">-</th>
+                                            <th width="10">Opsi</th>
                                         </tr>
                                     </thead>
                                    
@@ -492,8 +492,8 @@
       $(".order_subtotal").val(rupiah(subtotal));
       var diskon = $(".order_diskon").val();
       var ongkir = $(".order_ongkir").val();
-      var total_all = (parseInt(subtotal) - parseInt(diskon)) +parseInt(ongkir);
-      $(".order_total").val(rupiah(total_all));
+      var total_all = (parseInt(subtotal) - parseInt(diskon)) + parseInt(ongkir);
+    //   $(".order_total").val(total_all);
     }
 
     $(document).on("click",".btn-save",function(){

@@ -158,6 +158,9 @@ class CartController extends BaseController
 				if ($subtotal > $setting_free_ongkir_min) {
 					$ongkir = 0;
 				}
+				// elseif ($data_address->kelurahan_id == 3277020006 ) {
+				// 	$ongkir = 10000;
+				// }
 				$ongkir;
 			}
 
@@ -167,9 +170,10 @@ class CartController extends BaseController
 				"subtotal" => "Rp. " . number_format($subtotal),
 				"ongkir" => $ongkir,
 				"kelurahan_ongkir" => "Rp. " . number_format($kelurahan_ongkir),
-				"total_rupiah" => $total_rupiah
+				"total_rupiah" => "Rp. " . number_format($subtotal + $ongkir)
 			];
 			return response()->json($res);
+			
 		}
 	}
 
