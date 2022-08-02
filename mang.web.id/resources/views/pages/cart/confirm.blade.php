@@ -178,10 +178,12 @@
                             $class_text = "text-danger";
                             $text = "Tidak Tersedia";
                             $checked = "disabled";
+                            $hidden ="hidden";
                             if($someday){
                                 $class_text = "text-success";
                                 $text = "Tersedia";
                                 $checked = "checked";
+                                $hidden ="";
                             }
 
                             @endphp
@@ -192,7 +194,7 @@
                                     <small class="text-opac">{{$someday_keterangan}}</small>
                                 </p>
                             </div>
-                            <div class="col-auto align-self-center">
+                            <div class="col-auto align-self-center" {{$hidden}}>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="order_tanggal" id="order_tanggal" {{$checked}}  value="{{date("Y-m-d")}}" >
                                     <label class="form-check-label" for="order_tanggal">
@@ -249,6 +251,12 @@
             <div class="col-auto txt-ongkir">Rp. 0</div>
         </div>
 
+        <div class="row mb-3">
+            <div class="col">
+                <p>Bonus</p>
+            </div>
+            <div class="col-auto txt-bonus"></div>
+        </div>
         <div class="row fw-bold mb-4">
             <div class="mb-3 col-12">
                 <div class="dashed-line"></div>
@@ -343,6 +351,7 @@
                             $(".txt-ongkir").html(data.kelurahan_ongkir);
                         }
                         $(".txt-total").html(data.total_rupiah);
+                        $(".txt-bonus").html(data.bonus1_text);
                     },
                     error:function(data){
                         console.log(data);

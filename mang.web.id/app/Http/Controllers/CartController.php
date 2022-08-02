@@ -139,11 +139,24 @@ class CartController extends BaseController{
 	        $setting_free_ongkir = $data_setting->setting_free_ongkir;
 	        $subtotal = Cart::getSubTotal();
 	        $ongkir = $data_kelurahan->kelurahan_ongkir;
+					$bonus1 = 500000;
+					$bonus2 = 1000000;
+
 	        if($setting_free_ongkir==1){
 	        	$setting_free_ongkir_min = $data_setting->setting_free_ongkir_min;
 	        	if($subtotal>$setting_free_ongkir_min){
 	        		$ongkir = 0;
 	        	}
+						if ($subtotal>$bonus1) {
+							$bonus1_text = "Free Abon 50gr";
+						}else {
+							$bonus1_text = "Tidak ada";
+						}
+						if ($subtotal>$bonus2) {
+							$bonus1_text = "Free Abon 100gr";
+						}else {
+							$bonus1_text = "Tidak ada";
+						}
 	        	$ongkir;
 	        }
 
@@ -153,7 +166,9 @@ class CartController extends BaseController{
 	        	"subtotal" => "Rp. ".number_format($subtotal),
 	        	"ongkir" => $ongkir,
 	        	"kelurahan_ongkir" => "Rp. ".number_format($kelurahan_ongkir),
-	        	"total_rupiah" => "Rp. ".number_format($total_rupiah)
+	        	"total_rupiah" => "Rp. ".number_format($total_rupiah),
+						"bonus1_text" => $bonus1_text,
+						"bonus"=>$subtotal>$bonus1 && $subtotal>$bonus2
 	        );
 	        return response()->json($res);
 		}

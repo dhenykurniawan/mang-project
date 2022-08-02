@@ -109,7 +109,12 @@
             </div>
             <div class="col-auto txt-ongkir">Rp. 0</div>
         </div>
-
+        <div class="row mb-3">
+            <div class="col">
+                <p>Bonus</p>
+            </div>
+            <div class="col-auto txt-bonus"></div>
+        </div>
         <div class="row fw-bold mb-4">
             <div class="mb-3 col-12">
                 <div class="dashed-line"></div>
@@ -197,9 +202,11 @@
                             $(".txt-ongkir").html(data.kelurahan_ongkir);
                         }
                         $(".txt-total").html(data.total_rupiah);
+                        $(".txt-bonus").html(data.bonus1_text);
+                        console.log(data.bonus);
                     },
                     error:function(data){
-                        console.log(data);
+                        console.log(data.bonus1_text);
                     }
                 });
                 
