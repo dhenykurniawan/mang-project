@@ -148,12 +148,12 @@ class CartController extends BaseController{
 	        }
 
 	        $total_rupiah = $subtotal + $ongkir;
-	        $total_rupiah = "Rp. ".number_format($subtotal);
+	        // $total_rupiah = "Rp. ".number_format($subtotal);
 	        $res = array(
 	        	"subtotal" => "Rp. ".number_format($subtotal),
 	        	"ongkir" => $ongkir,
 	        	"kelurahan_ongkir" => "Rp. ".number_format($kelurahan_ongkir),
-	        	"total_rupiah" => $total_rupiah
+	        	"total_rupiah" => "Rp. ".number_format($total_rupiah)
 	        );
 	        return response()->json($res);
 		}
@@ -388,10 +388,10 @@ class CartController extends BaseController{
 					$produk_data[] = $pd['produk_nama'];
 					$someday = false;
 				}
-			}
-			if(!$someday){
-				$produk_data = implode(", ", $produk_data);
-				$someday_keterangan = "Pengiriman hari ini tidak tersedia karena didalam keranjang ada produk yang tidak masuk dalam kategori produk someday ($produk_data)";
+				if(!$someday){
+					$produk_data = implode(", ", $produk_data);
+					$someday_keterangan = "Pengiriman hari ini tidak tersedia karena didalam keranjang ada produk yang tidak masuk dalam kategori produk someday ($produk_data)";
+				}
 			}
 		}		
 		//-------------Validasi someday-------------------------------------

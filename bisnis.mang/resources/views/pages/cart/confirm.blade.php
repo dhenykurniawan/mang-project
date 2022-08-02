@@ -185,7 +185,7 @@
         </div>
 
         <div class="row mb-2">
-             <!-- <div class="col-12 col-md-6 col-lg-4">
+             <div class="col-12 col-md-6 col-lg-4">
                 <a href="javascript:;" class="card shadow-sm mb-3 product text-normal">
                     <div class="card-body">
                         <div class="row">
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                 </a>
-            </div> -->
+            </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="javascript:;" class="card shadow-sm mb-3 product text-normal">
                     <div class="card-body">
