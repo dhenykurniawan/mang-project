@@ -16,7 +16,7 @@ $uri_sub = $this->uri->segment(2);
         
         <li class="<?php echo ($uri_index == 'produk') ? "active" : ""; ?>">
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">swap_calls</i>
+                <i class="material-icons">loyalty</i>
                 <span>Produk</span>
             </a>
             <ul class="ml-menu">
@@ -32,7 +32,7 @@ $uri_sub = $this->uri->segment(2);
 
           <li class="<?php echo ($uri_index == 'customer') ? "active" : ""; ?>">
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">swap_calls</i>
+                <i class="material-icons">people</i>
                 <span>Customer</span>
             </a>
             <ul class="ml-menu">
@@ -45,7 +45,7 @@ $uri_sub = $this->uri->segment(2);
 
          <li class="<?php echo ($uri_index == 'kurir') ? "active" : ""; ?>">
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">swap_calls</i>
+                <i class="material-icons">motorcycle</i>
                 <span>Kurir</span>
             </a>
             <ul class="ml-menu">
@@ -61,7 +61,7 @@ $uri_sub = $this->uri->segment(2);
 
          <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">swap_calls</i>
+                <i class="material-icons">person</i>
                 <span>Mitra</span>
             </a>
             <ul class="ml-menu">
@@ -77,7 +77,7 @@ $uri_sub = $this->uri->segment(2);
 
           <li class="<?php echo ($uri_index=="transaksi") ? "active" : ""; ?>">
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">swap_calls</i>
+                <i class="material-icons">monetization_on</i>
                 <span>Transaksi</span>
             </a>
             <ul class="ml-menu">

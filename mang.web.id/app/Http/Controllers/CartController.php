@@ -153,18 +153,6 @@ class CartController extends BaseController{
 						if($subtotal>$bonus2){
 							$bonus1_text = "Free Abon 100gr";
 						}
-							// $bonus1_text = "Tidak ada";
-						// if ($subtotal>$bonus2) {
-						// 	$bonus1_text = "Free Abon 100gr";
-						// }else{
-						// 	$bonus1_text = "Tidak ada";
-						// }
-						
-						// if ($subtotal>$bonus2) {
-						// 	$bonus1_text = "Free Abon 100gr";
-						// }else {
-						// 	$bonus1_text = "Tidak ada";
-						// }
 	        	$ongkir;
 	        }
 
@@ -175,8 +163,7 @@ class CartController extends BaseController{
 	        	"ongkir" => $ongkir,
 	        	"kelurahan_ongkir" => "Rp. ".number_format($kelurahan_ongkir),
 	        	"total_rupiah" => "Rp. ".number_format($total_rupiah),
-						"bonus1_text" => $bonus1_text,
-						"bonus"=>$subtotal>$bonus1
+						"bonus" => $bonus1_text
 	        );
 	        return response()->json($res);
 		}

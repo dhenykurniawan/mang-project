@@ -12,7 +12,7 @@
                             <i class="material-icons">shopping_cart</i>
                         </div>
                         <div class="content">
-                            <div class="text">ORDER</div>
+                            <div class="text">ORDER FINISH</div>
                             <div class="number" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20"><?php echo number_format($total_order)?></div>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-cyan hover-expand-effect">
                         <div class="icon">
-                            <i class="material-icons">list</i>
+                            <i class="material-icons">loyalty</i>
                         </div>
                         <div class="content">
                             <div class="text">PRODUK</div>
@@ -42,11 +42,11 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="info-box bg-light-green hover-expand-effect">
                         <div class="icon">
-                            <i class="material-icons">attach_money</i>
+                            <i class="material-icons">monetization_on</i>
                         </div>
                         <div class="content">
-                            <div class="text">TRANSAKSI</div>
-                            <div class="number" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"><?php echo number_format($total_transaksi)?></div>
+                            <div class="text">JUMLAH PENDAPATAN</div>
+                            <div class="number" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20">Rp.<?php echo number_format($total_transaksi)?></div>
                         </div>
                     </div>
                 </div>

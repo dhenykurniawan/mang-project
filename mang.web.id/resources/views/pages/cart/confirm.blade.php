@@ -309,11 +309,12 @@
                     contentType:false,
                     processData: false,
                     url:url,
-                    beforeSend:function(){
+                    beforeSend:function(data){
                       $(".btn_confirm").html(loading_span());
+                      console.log(data);
                     },
                     success:function(data){
-                        console.log(data);
+                      console.log(data);
                       $(".btn_confirm").html(html_default);
                       window.location.href = redirect;
                     },
@@ -351,7 +352,7 @@
                             $(".txt-ongkir").html(data.kelurahan_ongkir);
                         }
                         $(".txt-total").html(data.total_rupiah);
-                        $(".txt-bonus").html(data.bonus1_text);
+                        $(".txt-bonus").html(data.bonus);
                     },
                     error:function(data){
                         console.log(data);

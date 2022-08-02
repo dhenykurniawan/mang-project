@@ -133,6 +133,9 @@
                 {
                     "data": "order_status"
                 },
+                // {
+                //     "data": "bonus"
+                // },
                 {
                     "data": "order_payment_method"
                 },
@@ -571,6 +574,7 @@
                  $("#order_alamat").val(json.data.order_alamat);
                  $("#order_tanggal").val(json.data.order_tanggal);
                  $("#order_status").val(json.data.order_status);
+                 $("#bonus").val(json.data.bonus);
                  $(".order_subtotal").val(rupiah(json.data.order_subtotal));
                  $(".order_diskon").val(rupiah(json.data.order_diskon));
                  $(".order_ongkir").val(rupiah(json.data.order_ongkir));
@@ -701,6 +705,7 @@
                  $("#order_alamat").val(json.data.order_alamat);
                  $("#order_tanggal").val(json.data.order_tanggal);
                  $("#order_status").val(json.data.order_status);
+                 $("#bonus").val(json.data.bonus);
                  $(".order_subtotal").val(rupiah(json.data.order_subtotal));
                  $(".order_diskon").val(rupiah(json.data.order_diskon));
                  $(".order_ongkir").val(rupiah(json.data.order_ongkir));

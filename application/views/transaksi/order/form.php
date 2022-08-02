@@ -153,6 +153,15 @@
                              <label for="email_address">Total <span class="text-danger">*</span></label>
                               <input type="text" name="order_total" class="form-control order_total"  readonly="" value="0" >
                         </div>
+                        <div class="col-sm-12">
+                        <br />
+                        <label for="email_address">Bonus</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea class="form-control no-resize" name="bonus" rows="2" id="bonus" disabled></textarea>
+                                </div>
+                            </div>
+                    </div>
                          <div class="col-sm-12">
                             <br />
                              <label for="email_address">Keterangan</label>

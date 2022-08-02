@@ -166,8 +166,9 @@ class OrderController extends CI_Controller {
 	             3 => 'order_created',
 	             4 => 'order_tanggal',
 	             5 => 'order_status',
-	             6 => 'order_payment_method',
-	             7 => 'order_total'
+							 6 => 'bonus',
+	             7 => 'order_payment_method',
+	             8 => 'order_total'
 	        ];
 			$limit = $this->input->get('length');
 	        $start = $this->input->get('start');
@@ -186,24 +187,21 @@ class OrderController extends CI_Controller {
         	$resp['draw'] = (int)$this->input->get('draw');
         	$temp_data = array();
         	foreach ($data['data'] as $dt) {
-
-        		$button = "";
-        		
-        		$button_edit = "";
-
-				$button_detail = "<button class='btn btn-circle waves-effect waves-circle waves-float btn-primary' onclick='show_detail(`".$dt['order_id']."`)'><i class='material-icons'>search</i></button> ";
-
-				$button_wa = "<a href='https://api.whatsapp.com/send?phone=".wa_number($dt['order_wa'])."' target='__blank' class='btn btn-circle waves-effect waves-circle waves-float btn-success'><i class='material-icons'>whatsapp</i></a>";
-
-				$button_print = "<a href='".base_url().'transaksi/order/print?order_id='.$dt['order_id']."' target='__blank' class='btn btn-circle waves-effect waves-circle waves-float btn-primary'><i class='material-icons'>print</i></a>";
+        	$button = "";
+        	$button_edit = "";
+					$total = "Rp.".number_format($dt['order_total']);
+					$txt_wa= ", Saya Admin Mang, ingin memastikan perihal pembayaran dengan nomer order: *{$dt['order_id']}* dengan total pembayaran sebesar: *{$total}*. Harap untuk segera melunasinya. Terimakasih! ";
+					$button_detail = "<button class='btn btn-circle waves-effect waves-circle waves-float btn-primary' onclick='show_detail(`".$dt['order_id']."`)'><i class='material-icons'>search</i></button> ";
+					$button_wa = "<a href='https://wa.me/".wa_number($dt['order_wa'])."?text=Halo ".$dt['order_nama'].$txt_wa."' target='__blank' class='btn btn-circle waves-effect waves-circle waves-float btn-success'><i class='material-icons'>whatsapp</i></a>";
+					$button_print = "<a href='".base_url().'transaksi/order/print?order_id='.$dt['order_id']."' target='__blank' class='btn btn-circle waves-effect waves-circle waves-float btn-primary'><i class='material-icons'>print</i></a>";
+					$button_cancel = "";
+					$button_approve = "";
+					if($dt['order_status']=="draft"){
+						$button_cancel = "<button data-status='cancel-admin' data-order='".$dt['order_id']."' onclick='confirm(this)'  class='btn btn-circle waves-effect waves-circle waves-float btn-danger'><i class='material-icons'>cancel</i></button>";
+						$button_approve = "<button data-status='finish' data-order='".$dt['order_id']."' onclick='confirm(this)' class='btn btn-circle waves-effect waves-circle waves-float btn-success'><i class='material-icons'>check</i></button>";
+						/*$button_edit = "<button class='btn btn-circle waves-effect waves-circle waves-float btn-warning'  onclick='show_edit(`".$dt['order_id']."`)'><i class='material-icons'>mode_edit</i></button>";*/
+					}
 				
-				$button_cancel = "";
-				$button_approve = "";
-				if($dt['order_status']=="draft"){
-					$button_cancel = "<button data-status='cancel-admin' data-order='".$dt['order_id']."' onclick='confirm(this)'  class='btn btn-circle waves-effect waves-circle waves-float btn-danger'><i class='material-icons'>cancel</i></button>";
-					$button_approve = "<button data-status='finish' data-order='".$dt['order_id']."' onclick='confirm(this)' class='btn btn-circle waves-effect waves-circle waves-float btn-success'><i class='material-icons'>check</i></button>";
-					/*$button_edit = "<button class='btn btn-circle waves-effect waves-circle waves-float btn-warning'  onclick='show_edit(`".$dt['order_id']."`)'><i class='material-icons'>mode_edit</i></button>";*/
-				}
 
 				
 				$order_status = "<button class='btn btn-small btn-primary'>Draft</span>";
@@ -242,6 +240,7 @@ class OrderController extends CI_Controller {
         			"order_created" => $dt['order_created'],
         			"order_tanggal" => $dt['order_tanggal'],
         			"order_status" => $order_status,
+        			// "bonus" => $bonus,
         			"order_payment_method" => strtoupper($dt['order_payment_method']),
         			"order_total" => number_format($dt['order_total']),
         			"button" => $button

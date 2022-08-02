@@ -17,7 +17,7 @@ class Tr_Order extends Model
     protected $primaryKey = 'order_id';
 
     protected $fillable = [
-        'order_id', 'customer_id','order_subtotal','order_diskon','order_total','order_nama','order_kelurahan_id','order_kelurahan','order_kecamatan','order_kota','order_provinsi','order_alamat','order_wa','order_ongkir','order_fee_ongkir','order_keterangan','order_status','order_payment_method','order_tanggal','order_created','order_updated'
+        'order_id', 'customer_id','order_subtotal','order_diskon','order_total','order_nama','order_kelurahan_id','order_kelurahan','order_kecamatan','order_kota','order_provinsi','order_alamat','order_wa','order_ongkir','order_fee_ongkir','order_keterangan','order_status','bonus','order_payment_method','order_tanggal','order_created','order_updated'
     ];
 
     public function tr_produk(){

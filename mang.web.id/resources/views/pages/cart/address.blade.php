@@ -85,7 +85,6 @@
                         </div>
                     </div>
                 </div>
-
             @endforeach
         </div>
 
@@ -202,8 +201,8 @@
                             $(".txt-ongkir").html(data.kelurahan_ongkir);
                         }
                         $(".txt-total").html(data.total_rupiah);
-                        $(".txt-bonus").html(data.bonus1_text);
-                        console.log(data.bonus);
+                        $(".txt-bonus").html(data.bonus);
+                        
                     },
                     error:function(data){
                         console.log(data.bonus1_text);

@@ -38,6 +38,13 @@
                                     </button>
                             </div>
                             </div>
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <div class="form-group form-floating mt-3">
+                                    <input type="text" name="catatan" class="form-control border bg-light" value="{{ $d['catatan'] }}">
+                                    <label for="jam_pengiriman">Catatan</label>
+                                </div>
+                            </div>
+                                            
                         </div>
                     </div>
                 </div>

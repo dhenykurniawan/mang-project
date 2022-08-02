@@ -37,26 +37,41 @@ class OrderController extends BaseController{
 	            	}
 
 	            	$user_data = Session::get("user_data");
-					$user_data = json_decode($user_data,TRUE);
-					$customer_id = $user_data['customer_id'];
+								$user_data = json_decode($user_data,TRUE);
+								$customer_id = $user_data['customer_id'];
 
-					$address = Session::get("address");
-					$address = json_decode($address,TRUE);
-					$kelurahan_ongkir = $address['kelurahan']['kelurahan_ongkir'];
+								$address = Session::get("address");
+								$address = json_decode($address,TRUE);
+								$kelurahan_ongkir = $address['kelurahan']['kelurahan_ongkir'];
 			        $kelurahan_feekurir_persentase = $address['kelurahan']['kelurahan_feekurir_persentase'];
 			        $data_setting = St_Setting::first();
 			        $setting_free_ongkir = $data_setting->setting_free_ongkir;
 			        $subtotal = Cart::getSubTotal();
 			        $ongkir = $kelurahan_ongkir;
 			        $kelurahan_feekurir_persentase = $address['kelurahan']['kelurahan_feekurir_persentase'] /100 ;
-
 			        $order_fee_ongkir = $kelurahan_ongkir * $kelurahan_feekurir_persentase;
-			        if($setting_free_ongkir==1){
-			        	$setting_free_ongkir_min = $data_setting->setting_free_ongkir_min;
-			        	if($subtotal>$setting_free_ongkir_min){
-			        		$ongkir = 0;
-			        	}
-			        }
+							$bonus1 = 500000;
+							$bonus2 = 1000000;
+							$bonus1_text="Tidak Ada";
+			        // if($setting_free_ongkir==1){
+			        // 	$setting_free_ongkir_min = $data_setting->setting_free_ongkir_min;
+			        // 	if($subtotal>$setting_free_ongkir_min){
+			        // 		$ongkir = 0;
+			        // 	}
+			        // }
+							if($setting_free_ongkir==1){
+								$setting_free_ongkir_min = $data_setting->setting_free_ongkir_min;
+								if($subtotal>$setting_free_ongkir_min){
+									$ongkir = 0;
+								}
+								if ($subtotal>$bonus1) {
+									$bonus1_text = "Free Abon 50gr";
+								}
+								if($subtotal>$bonus2){
+									$bonus1_text = "Free Abon 100gr";
+								}
+								$ongkir;
+							}
 			        $total_rupiah = $subtotal + $ongkir;
 	            	$param = array(
 	            		"customer_id" => $customer_id,
@@ -74,6 +89,7 @@ class OrderController extends BaseController{
 									"order_ongkir" => $ongkir,
 									"order_fee_ongkir" => $order_fee_ongkir,
 									"order_status" => 'draft',
+									"bonus" => $bonus1_text,
 									"order_payment_method" => $request->get("order_payment_method"),
 									"order_tanggal" => $request->get("order_tanggal"),
 									"order_created" => date("Y-m-d H:i:s")
