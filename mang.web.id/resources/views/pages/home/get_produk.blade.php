@@ -7,18 +7,18 @@
                     <img src="{{FileManager::get("produk/",$d['produk_gambar'])}}" height="109" width="123">
                 </figure>
                 <p class="mb-1">
-                    @if($d['produk_someday'] > 0)
+                    <!-- @if($d['produk_someday'] > 0)
                         <small class="text-opac text-primary">
                             <i><b>Sameday Delivery</b></i>
                         </small>
-                    @endif
+                    @endif -->
                     <!--<small class="float-end"><span class="text-opac">4.5</span>
                         <i class="bi bi-star-fill text-warning"></i>
                     </small>!-->
 
                 </p>
                 <a href="javascript:;" class="text-normal">
-                    <h6 class="text-color-theme">{{$d['produk_nama']}}</h6>
+                    <h6 class="text-success">{{$d['produk_nama']}}</h6>
                 </a>
                 <div class="row">
                     <div class="col">
@@ -34,6 +34,17 @@
                     </div>
                    
                 </div>
+                <p class="mb-1">
+                    @if($d['produk_someday'] > 0)
+                        <small class="text-opac text-success">
+                            <b>Sameday Delivery</b>
+                        </small>
+                    @endif
+                    <!--<small class="float-end"><span class="text-opac">4.5</span>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </small>!-->
+
+                </p>
                 <div class="row float-end">
                      @if($buy)
                          <div class="col-auto">

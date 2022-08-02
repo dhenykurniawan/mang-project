@@ -30,7 +30,7 @@
                 <h5 class="mb-0 cart_count">6 produk di keranjang</h5>
             </div>
             <div class="col-auto pe-0 align-self-center">
-                <a href="{{ route('index') }}" class="link text-color-theme">Belanja Lagi <i
+                <a href="{{ route('index') }}" class="link text-success">Belanja Lagi <i
                         class="bi bi-chevron-right"></i></a>
             </div>
         </div>

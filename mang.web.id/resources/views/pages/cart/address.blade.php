@@ -29,10 +29,9 @@
                 <h5 class="mb-0">Pengiriman ke</h5>
             </div>
             <div class="col-auto pe-0 align-self-center">
-                <a href="{{ route('cart.form_address') }}" class="link text-color-theme">
+                <a href="{{ route('cart.form_address') }}" class="link text-success">
                     <i class="bi bi-plus"></i>
-                    Tambah Alamat
-
+                    <span>Tambah Alamat</span> 
                 </a>
             </div>
         </div>
@@ -77,7 +76,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="col-auto align-self-center">
-                                <a href="{{ route('cart.form_address') }}?edit={{$ad['address_id']}}" class="btn btn-link text-color-theme"><i
+                                <a href="{{ route('cart.form_address') }}?edit={{$ad['address_id']}}" class="btn btn-link text-success"><i
                                         class="bi bi-pencil "></i>
                                     <span class="size-18">Ubah Alamat</span>
                                 </a>

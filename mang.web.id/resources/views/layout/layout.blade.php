@@ -190,7 +190,7 @@
         <header class="container-fluid header">
             <div class="row">
                 <div class="col-auto align-self-center">
-                    <button type="button" class="btn btn-link menu-btn text-color-theme">
+                    <button type="button" class="btn btn-link menu-btn text-success">
                         <i class="bi bi-list size-24"></i>
                     </button>
                 </div>
@@ -207,7 +207,7 @@
                         $no_hp = $setting->setting_no_wa;
                     @endphp
 
-                    <a target="__blank" href="https://api.whatsapp.com/send?phone={{$no_hp}}" class="link text-color-theme">
+                    <a target="__blank" href="https://api.whatsapp.com/send?phone={{$no_hp}}" class="link text-success">
                         <i class="bi bi-whatsapp size-22"></i>
                     </a>
                 </div>
